@@ -12,20 +12,6 @@ import org.springframework.core.env.Environment;
 public class HelloSpringApplication implements CommandLineRunner {
 
 	public static void main(final String[] args) {
-		    String port = System.getenv("PORT");
-    if (port == null) {
-      port = "8080";
-      logger.warn("$PORT environment variable not set, defaulting to 8080");
-    }
-    SpringApplication app = new SpringApplication(HelloWorldApplication.class);
-    app.setDefaultProperties(Collections.singletonMap("server.port", port));
-		
-	    // Start the Spring Boot application.
-    app.run(args);
-    logger.info(
-        "Hello from Cloud Run! The container started successfully and is listening for HTTP requests on " + port);	
-		
-		
 		SpringApplication.run(HelloSpringApplication.class, args);
 	}
 
